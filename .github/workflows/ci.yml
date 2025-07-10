@@ -17,4 +17,4 @@ jobs:
       - name: Run command
         uses: matlab-actions/run-command@v2
         with:
-          command: disp('hello world')
+          command: "[status, msg] = license('checkout', 'matlab')"
