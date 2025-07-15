@@ -20,4 +20,5 @@ jobs:
         uses: matlab-actions/run-command@v2
         with:
           command: disp('plotting'); plot([1 2 3])
+          startup-options: -nodisplay
             
