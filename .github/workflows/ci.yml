@@ -16,8 +16,8 @@ jobs:
           cache: true
       # - name: Run tests and generate artifacts
       #   uses: matlab-actions/run-tests@v2
-      - name: Run MATLAB script
+      - name: Run MATLAB command
         uses: matlab-actions/run-command@v2
         with:
-          command: run(fullfile('examples','matlab'));
+          command: plot([1 2 3])
             
