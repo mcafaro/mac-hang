@@ -13,6 +13,11 @@ jobs:
         with:
           products: Curve_Fitting_Toolbox Optimization_Toolbox
           release: R2025a
-          cache: true
-      - name: Run tests and generate artifacts
-        uses: matlab-actions/run-tests@v2
+      #     cache: true
+      # - name: Run tests and generate artifacts
+      #   uses: matlab-actions/run-tests@v2
+      - name: Run MATLAB script
+        uses: matlab-actions/run-command@v2
+        with:
+          command: run(fullfile('examples','matlab'));
+            
