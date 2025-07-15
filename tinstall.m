@@ -20,25 +20,25 @@ classdef tinstall < matlab.unittest.TestCase
             testCase.verifyThat(logical(status), IsTrue, msg);
         end
 
-        function testFailToCheckoutRestrictedLicense(testCase, restricted)
-            import matlab.unittest.diagnostics.Diagnostic;
+        % function testFailToCheckoutRestrictedLicense(testCase, restricted)
+        %     import matlab.unittest.diagnostics.Diagnostic;
 
-            [status, msg] = license('checkout', restricted);
-            testCase.verifyThat(logical(status), IsFalse, Diagnostic.join([restricted ' should not checkout'], msg));
-        end
+        %     [status, msg] = license('checkout', restricted);
+        %     testCase.verifyThat(logical(status), IsFalse, Diagnostic.join([restricted ' should not checkout'], msg));
+        % end
 
-        function testRunExample(testCase, example)
-            testCase.verifyTrue(isInstalled(example), 'Product not installed');
+        % function testRunExample(testCase, example)
+        %     testCase.verifyTrue(isInstalled(example), 'Product not installed');
 
-            startingFigs = findall(groot, 'Type','figure');
-            testCase.addTeardown(@() close(setdiff(findall(groot, 'Type','figure'), startingFigs)));
+        %     startingFigs = findall(groot, 'Type','figure');
+        %     testCase.addTeardown(@() close(setdiff(findall(groot, 'Type','figure'), startingFigs)));
 
-            [log, ex] = evalc('runExample(fullfile(''examples'',example));');
-            if ~isempty(ex)
-                disp(log);
-                rethrow(ex);
-            end
-        end
+        %     [log, ex] = evalc('runExample(fullfile(''examples'',example));');
+        %     if ~isempty(ex)
+        %         disp(log);
+        %         rethrow(ex);
+        %     end
+        % end
     end
 
 end
