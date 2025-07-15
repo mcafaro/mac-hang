@@ -16,9 +16,10 @@ jobs:
           cache: true
       # - name: Run tests and generate artifacts
       #   uses: matlab-actions/run-tests@v2
+      - name: Setup upterm session
+        uses: lhotari/action-upterm@v1
       - name: Run MATLAB command
         uses: matlab-actions/run-command@v2
         with:
-          command: disp('plotting'); plot([1 2 3])
-          startup-options: -nodisplay
+          command: plot(1)
             
