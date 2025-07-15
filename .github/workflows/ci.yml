@@ -14,7 +14,5 @@ jobs:
           products: Curve_Fitting_Toolbox Optimization_Toolbox
           release: R2025a
           cache: true
-      - name: Run command
-        uses: matlab-actions/run-command@v2
-        with:
-          command: "[status, msg] = license('checkout', 'matlab')"
+      - name: Run tests and generate artifacts
+        uses: matlab-actions/run-tests@v2
